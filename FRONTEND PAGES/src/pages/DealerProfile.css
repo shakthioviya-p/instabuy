@@ -1,0 +1,377 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap");
+
+:root {
+  --gold: #8B6914;
+  --gold-light: #B8921C;
+  --gold-pale: #F5EDD6;
+  --gold-bg: #FDF9F0;
+  --cream: #FAF8F4;
+  --cream-dark: #F0EBE0;
+  --sidebar-bg: #7A5C10;
+  --sidebar-dark: #5C4408;
+  --text-dark: #1A1208;
+  --text-mid: #4A3F2F;
+  --text-muted: #8A7A60;
+  --border: #DDD0B0;
+  --success: #2E7D32;
+  --success-bg: #E8F5E9;
+  --radius: 12px;
+  --shadow: 0 2px 16px rgba(139, 105, 20, 0.10);
+  --shadow-lg: 0 8px 32px rgba(139, 105, 20, 0.16);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+.dp-container {
+  display: flex;
+  min-height: 100vh;
+  background: var(--cream);
+  font-family: "DM Sans", sans-serif;
+}
+
+/* ─── Sidebar ─────────────────────────────────────── */
+.dp-sidebar {
+  width: 160px;
+  background: var(--sidebar-bg);
+  display: flex;
+  flex-direction: column;
+  padding: 24px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 10;
+}
+
+.dp-sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 16px 24px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.dp-sidebar-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #fff;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Playfair Display", serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.dp-sidebar-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.dp-sidebar-sub {
+  font-size: 10px;
+  color: rgba(255,255,255,0.6);
+}
+
+.dp-sidebar-nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 16px 0;
+}
+
+.dp-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.75);
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s;
+  border-radius: 0 8px 8px 0;
+  margin-right: 8px;
+}
+
+.dp-nav-item:hover {
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+}
+
+.dp-sidebar-dealer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.dp-sidebar-dealer.active {
+  background: rgba(255,255,255,0.15);
+  border-radius: 8px;
+  margin: 0 8px;
+}
+
+.dp-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--gold-pale);
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+  border: 2px solid rgba(255,255,255,0.3);
+}
+
+.dp-dealer-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.dp-dealer-role {
+  font-size: 10px;
+  color: rgba(255,255,255,0.6);
+}
+
+/* ─── Main ────────────────────────────────────────── */
+.dp-main {
+  margin-left: 160px;
+  flex: 1;
+  padding: 32px 40px;
+  max-width: 960px;
+}
+
+/* ─── Header ──────────────────────────────────────── */
+.dp-header {
+  margin-bottom: 28px;
+}
+
+.dp-back-btn {
+  background: none;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-mid);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.dp-back-btn:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: var(--gold-pale);
+}
+
+/* ─── Hero ────────────────────────────────────────── */
+.dp-hero {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  margin-bottom: 32px;
+  animation: fadeUp 0.4s ease;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dp-hero-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 16px rgba(139, 105, 20, 0.3);
+}
+
+.dp-hero-avatar span {
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.dp-hero-info h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.dp-hero-info p {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.dp-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--success-bg);
+  color: var(--success);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid #A5D6A7;
+}
+
+/* ─── Section Title ───────────────────────────────── */
+.dp-section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--gold-pale);
+}
+
+/* ─── Cards Grid ──────────────────────────────────── */
+.dp-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.dp-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+  animation: fadeUp 0.4s ease both;
+}
+
+.dp-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--gold-pale);
+}
+
+.dp-card-wide {
+  grid-column: span 2;
+}
+
+.dp-card-icon {
+  font-size: 22px;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  background: var(--gold-bg);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dp-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.dp-card-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.dp-card-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+  word-break: break-word;
+}
+
+/* ─── Actions ─────────────────────────────────────── */
+.dp-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.dp-btn-outline {
+  padding: 11px 24px;
+  border: 1.5px solid var(--gold);
+  background: #fff;
+  border-radius: 8px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gold);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.dp-btn-outline:hover {
+  background: var(--gold-pale);
+}
+
+.dp-btn-danger {
+  padding: 11px 24px;
+  border: 1.5px solid #EF9A9A;
+  background: #fff;
+  border-radius: 8px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #C62828;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.dp-btn-danger:hover {
+  background: #FFEBEE;
+}
+
+/* ─── Responsive ──────────────────────────────────── */
+@media (max-width: 768px) {
+  .dp-sidebar { width: 56px; }
+  .dp-sidebar-brand span:last-child,
+  .dp-nav-item span:last-child,
+  .dp-dealer-name, .dp-dealer-role,
+  .dp-sidebar-sub { display: none; }
+  .dp-main { margin-left: 56px; padding: 20px 16px; }
+  .dp-cards-grid { grid-template-columns: 1fr; }
+  .dp-card-wide { grid-column: span 1; }
+  .dp-hero { flex-direction: column; text-align: center; }
+}

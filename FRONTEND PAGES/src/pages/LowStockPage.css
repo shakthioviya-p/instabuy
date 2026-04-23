@@ -1,0 +1,223 @@
+/* PAGE */
+.lowstock-page {
+  background: #f6f1eb;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* TITLE */
+.lowstock-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #5a3e2b;
+  margin-bottom: 20px;
+}
+
+/* GRID */
+.lowstock-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+/* CARD */
+.lowstock-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 15px;
+  text-align: center;
+  position: relative;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* HOVER EFFECT */
+.lowstock-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* IMAGE */
+.lowstock-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+/* NAME */
+.lowstock-card h4 {
+  font-size: 16px;
+  color: #333;
+  margin: 5px 0;
+}
+
+/* PRICE */
+.lowstock-price {
+  font-size: 16px;
+  font-weight: 600;
+  color: #8c6f56;
+}
+
+/* QUANTITY */
+.lowstock-qty {
+  font-size: 13px;
+  color: #777;
+  margin-top: 5px;
+}
+
+/* BADGE */
+.lowstock-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #ff4d4d;
+  color: white;
+  font-size: 11px;
+  padding: 5px 8px;
+  border-radius: 6px;
+}
+
+/* EMPTY STATE */
+.lowstock-empty {
+  text-align: center;
+  color: #777;
+  margin-top: 50px;
+  font-size: 16px;
+}
+/* TOP BAR */
+/* ===== TOP BAR ===== */
+.topbar {
+  background: #8c6f56;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+/* text */
+.topbar-text {
+  animation: fadeText 4s ease-in-out infinite;
+}
+
+@keyframes fadeText {
+  0%,100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f4efe9;
+  padding: 15px 30px;
+}
+
+/* LOGO */
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #5a3e2b;
+}
+
+/* NAV LINKS */
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links span {
+  cursor: pointer;
+  color: #333;
+  transition: 0.2s;
+}
+
+.nav-links span:hover {
+  color: #8c6f56;
+}
+
+/* RIGHT SIDE */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+/* ===== BRAND TITLE (DealerHub) ===== */
+.brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  letter-spacing: 2px;
+
+  background: linear-gradient(90deg, #5a3e2b, #c6a27d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  position: relative;
+  display: inline-block;
+
+  animation: fadeSlide 1s ease;
+}
+
+/* underline animation */
+.brand::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: #c6a27d;
+
+  animation: lineGrow 1.2s ease forwards;
+}
+
+/* ===== SECTION TITLE ===== */
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  margin-top: 20px;
+
+  color: #5a3e2b;
+  letter-spacing: 1px;
+
+  animation: fadeUp 0.8s ease;
+}
+
+/* subtle highlight */
+.section-title::before {
+  content: "✦ ";
+  color: #c6a27d;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes lineGrow {
+  to {
+    width: 100%;
+  }
+}

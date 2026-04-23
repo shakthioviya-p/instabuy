@@ -1,0 +1,975 @@
+/* ═══════════════════════════════════════════════════════════
+   Onboarding.css — DealerHub Seller Onboarding
+   Theme: gold (#8B6914) on cream (#FAF8F4)
+   ═══════════════════════════════════════════════════════════ */
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap");
+
+:root {
+  --gold: #8B6914;
+  --gold-light: #B8921C;
+  --gold-pale: #F5EDD6;
+  --gold-bg: #FDF9F0;
+  --cream: #FAF8F4;
+  --cream-dark: #F0EBE0;
+  --text-dark: #1A1208;
+  --text-mid: #4A3F2F;
+  --text-muted: #8A7A60;
+  --border: #DDD0B0;
+  --success: #2E7D32;
+  --success-bg: #E8F5E9;
+  --error: #C62828;
+  --error-bg: #FFEBEE;
+  --warning-bg: #FFF8E1;
+  --warning-border: #F9A825;
+  --radius: 10px;
+  --shadow: 0 2px 12px rgba(139, 105, 20, 0.08);
+  --shadow-lg: 0 8px 32px rgba(139, 105, 20, 0.14);
+}
+
+/* ─── Container ──────────────────────────────────────────── */
+.ob-container {
+  min-height: 100vh;
+  background: var(--cream);
+  font-family: "DM Sans", sans-serif;
+  color: var(--text-dark);
+}
+
+/* ─── Header ─────────────────────────────────────────────── */
+.ob-header {
+  background: #fff;
+  border-bottom: 1.5px solid var(--border);
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  height: 72px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(139, 105, 20, 0.06);
+}
+
+.ob-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.ob-logo-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--gold);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.ob-logo-text {
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: -0.3px;
+}
+
+/* ─── Step Indicator ─────────────────────────────────────── */
+.ob-step-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex: 1;
+  justify-content: center;
+}
+
+.ob-step-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ob-step-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.ob-step-circle.active {
+  border-color: var(--gold);
+  background: var(--gold);
+  color: #fff;
+}
+
+.ob-step-circle.done {
+  border-color: var(--success);
+  background: var(--success);
+  color: #fff;
+}
+
+.ob-step-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.ob-step-label.active {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.ob-step-line {
+  width: 48px;
+  height: 2px;
+  background: var(--border);
+  margin: 0 10px;
+  transition: background 0.3s ease;
+}
+
+.ob-step-line.done {
+  background: var(--success);
+}
+
+/* ─── Main Layout ────────────────────────────────────────── */
+.ob-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.ob-main-layout {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 48px;
+  align-items: start;
+}
+
+/* ─── Left Panel ─────────────────────────────────────────── */
+.ob-left-panel {
+  background: #fff;
+  border-radius: 14px;
+  padding: 36px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.ob-left-panel h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0 0 24px;
+}
+
+.ob-subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: -16px 0 24px;
+}
+
+/* ─── GST Options ────────────────────────────────────────── */
+.ob-gst-options {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.ob-gst-card {
+  flex: 1;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  transition: all 0.2s ease;
+  background: #fff;
+}
+
+.ob-gst-card:hover {
+  border-color: var(--gold-light);
+  background: var(--gold-bg);
+}
+
+.ob-gst-card.selected {
+  border-color: var(--gold);
+  background: var(--gold-pale);
+}
+
+.ob-gst-card input[type="radio"] {
+  margin-top: 2px;
+  accent-color: var(--gold);
+}
+
+.ob-gst-card strong {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-dark);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.ob-gst-card p {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.ob-eid-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--gold);
+  margin-top: 6px;
+}
+
+/* ─── GSTIN Form ─────────────────────────────────────────── */
+.ob-gstin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+/* ─── No GST Panel ───────────────────────────────────────── */
+.ob-no-gst-panel {
+  background: var(--gold-bg);
+  border: 1.5px solid var(--gold-pale);
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 8px;
+}
+
+.ob-no-gst-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.ob-no-gst-panel p {
+  font-size: 13px;
+  color: var(--text-mid);
+  margin: 0 0 12px;
+}
+
+.ob-eid-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ob-eid-checklist li {
+  font-size: 13px;
+  color: var(--text-mid);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ob-check {
+  color: var(--success);
+  font-weight: 700;
+}
+
+.ob-terms-note {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 16px !important;
+}
+
+.ob-terms-note a {
+  color: var(--gold);
+  text-decoration: underline;
+}
+
+.ob-or-divider {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 10px 0 !important;
+}
+
+.ob-or-divider a {
+  color: var(--gold);
+  text-decoration: underline;
+}
+
+.ob-existing-eid-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-mid);
+  margin-top: 8px;
+}
+
+.ob-existing-eid-form {
+  margin-top: 8px;
+}
+
+.ob-eid-success-inline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: var(--success-bg);
+  border: 1px solid #A5D6A7;
+  border-radius: 8px;
+  font-size: 14px;
+  color: var(--success);
+  font-weight: 500;
+}
+
+/* ─── Form Grid ──────────────────────────────────────────── */
+.ob-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.ob-form-grid .ob-full-width {
+  grid-column: span 2;
+}
+
+/* ─── Inputs ─────────────────────────────────────────────── */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+.ob-form-grid input,
+.ob-gstin-form input,
+.ob-existing-eid-form input {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  color: var(--text-dark);
+  background: #fff;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+
+input:focus {
+  border-color: var(--gold-light);
+  box-shadow: 0 0 0 3px rgba(139, 105, 20, 0.1);
+}
+
+input::placeholder {
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.ob-input-hint {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin: -8px 0 4px;
+  grid-column: span 2;
+}
+
+/* ─── Buttons ────────────────────────────────────────────── */
+.ob-btn-primary {
+  background: var(--gold);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+  letter-spacing: 0.3px;
+}
+
+.ob-btn-primary:hover:not(:disabled) {
+  background: var(--gold-light);
+  box-shadow: 0 4px 14px rgba(139, 105, 20, 0.3);
+  transform: translateY(-1px);
+}
+
+.ob-btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.ob-btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ob-btn-secondary {
+  background: #fff;
+  color: var(--gold);
+  border: 1.5px solid var(--gold);
+  border-radius: 8px;
+  padding: 11px 24px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ob-btn-secondary:hover {
+  background: var(--gold-pale);
+}
+
+.ob-btn-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+/* ─── Bank Details ───────────────────────────────────────── */
+.ob-payment-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--gold-bg);
+  border: 1px solid var(--gold-pale);
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+.ob-payment-badge span {
+  font-size: 20px;
+}
+
+.ob-bank-notice {
+  background: var(--warning-bg);
+  border: 1px solid var(--warning-border);
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 13px;
+  color: #5D4037;
+  margin-bottom: 20px;
+}
+
+.ob-bank-verified {
+  background: var(--success-bg);
+  border: 1px solid #A5D6A7;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--success);
+  margin-bottom: 20px;
+}
+
+.ob-bank-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.ob-bank-info > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--cream-dark);
+}
+
+.ob-bank-info span {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.ob-bank-info strong {
+  font-size: 14px;
+  color: var(--text-dark);
+}
+
+.ob-ifsc-link {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.ob-ifsc-link a {
+  color: var(--gold);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* ─── Store Notice ───────────────────────────────────────── */
+.ob-store-notice {
+  background: var(--warning-bg);
+  border: 1px solid var(--warning-border);
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 13px;
+  color: #5D4037;
+  margin-bottom: 24px;
+}
+
+/* ─── Error ──────────────────────────────────────────────── */
+.ob-error {
+  background: var(--error-bg);
+  border: 1px solid #EF9A9A;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: var(--error);
+  margin: 8px 0;
+}
+
+/* ─── FAQ Panel ──────────────────────────────────────────── */
+.ob-faq {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.ob-faq-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--gold-bg);
+  border: 1px solid var(--gold-pale);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 24px;
+}
+
+.ob-faq-badge span {
+  font-size: 24px;
+}
+
+.ob-faq-badge p {
+  font-size: 13px;
+  color: var(--text-mid);
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.ob-faq h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0 0 16px;
+}
+
+.ob-faq-item {
+  border-bottom: 1px solid var(--cream-dark);
+}
+
+.ob-faq-item button {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-dark);
+  text-align: left;
+}
+
+.ob-faq-item button:hover {
+  color: var(--gold);
+}
+
+.ob-faq-chevron {
+  color: var(--text-muted);
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.ob-faq-item p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  padding: 0 0 14px;
+  margin: 0;
+}
+
+/* ─── Modal ──────────────────────────────────────────────── */
+.ob-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(26, 18, 8, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.ob-modal {
+  background: #fff;
+  border-radius: 16px;
+  padding: 36px;
+  width: 540px;
+  max-width: 94vw;
+  max-height: 88vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: var(--shadow-lg);
+  animation: slideUp 0.25s ease;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.ob-modal h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0 0 24px;
+}
+
+.ob-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: var(--cream-dark);
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--text-mid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.ob-modal-close:hover {
+  background: var(--border);
+}
+
+.ob-modal-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.ob-modal-step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.ob-modal-step.active {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.ob-modal-step.done {
+  color: var(--success);
+}
+
+.ob-modal-step span {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.ob-modal-step-line {
+  width: 60px;
+  height: 2px;
+  background: var(--border);
+}
+
+.ob-modal-section-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin: 16px 0 8px;
+}
+
+.ob-modal-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.ob-modal form input {
+  margin-bottom: 10px;
+}
+
+.ob-captcha-row {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.ob-captcha-img {
+  background: var(--cream-dark);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  padding: 10px;
+}
+
+/* ─── Submitting ─────────────────────────────────────────── */
+.ob-submitting {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.ob-submitting-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.ob-brand-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--gold);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Playfair Display", serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.ob-arrow {
+  font-size: 24px;
+  color: var(--text-muted);
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.ob-gst-icon {
+  background: #1B5E20;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.ob-submitting h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 18px;
+  color: var(--text-dark);
+  margin: 0 0 8px;
+}
+
+.ob-submitting p {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ─── OTP Phase ──────────────────────────────────────────── */
+.ob-otp-phase {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ob-otp-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.ob-otp-boxes {
+  display: flex;
+  gap: 8px;
+}
+
+.ob-otp-boxes input {
+  width: 44px !important;
+  height: 48px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  padding: 0 !important;
+  margin: 0;
+  transition: border-color 0.2s;
+}
+
+.ob-otp-boxes input:focus {
+  border-color: var(--gold);
+}
+
+.ob-resend {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.ob-resend button {
+  background: none;
+  border: none;
+  color: var(--gold);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 0;
+  text-decoration: underline;
+}
+
+/* ─── Success Phase ──────────────────────────────────────── */
+.ob-success-phase {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.ob-success-icon {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+.ob-success-phase h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0 0 8px;
+}
+
+.ob-success-phase p {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 0 0 24px;
+}
+
+/* ─── Responsive ─────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .ob-main-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .ob-header {
+    flex-direction: column;
+    height: auto;
+    padding: 16px 20px;
+    gap: 16px;
+  }
+
+  .ob-step-indicator {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .ob-step-line {
+    width: 24px;
+  }
+
+  .ob-step-label {
+    display: none;
+  }
+
+  .ob-gst-options {
+    flex-direction: column;
+  }
+
+  .ob-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ob-form-grid .ob-full-width {
+    grid-column: span 1;
+  }
+
+  .ob-modal-row {
+    grid-template-columns: 1fr;
+  }
+
+  .ob-otp-boxes input {
+    width: 36px !important;
+    height: 40px;
+  }
+}
+.ob-link-btn {
+  background: none;
+  border: none;
+  color: var(--gold);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: inherit;
+  padding: 0;
+  text-decoration: underline;
+  font-family: "DM Sans", sans-serif;
+}
